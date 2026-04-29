@@ -2,24 +2,26 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import requests
 import random
+import os
 
 app = Flask(__name__)
-CORS(app) # Это решает проблему "не работает" в браузере
+CORS(app) # Разрешаем браузеру обращаться к серверу
 
 # --- НАСТРОЙКИ ---
 TELEGRAM_TOKEN = '8707170113:AAH88gma6zaDP1KJunOi0bQdxOAtZ9xi2qo'
 CHAT_ID = '8291998554'
 
 COMPLIMENTS = [
-    "Твоя улыбка сияет ярче всех звезд в этой небуле ✨",
-    "Ты — самое прекрасное, что случалось с этим кодом ❤️",
-    "С каждым собранным сердечком я люблю тебя всё сильнее 🌸",
-    "Даже искусственный интеллект знает, что ты — чудо! 💎"
+    "Твои руки творят магию ✨",
+    "Ты — самая яркая звезда в этой небуле ❤️",
+    "Ловить сердечки легко, а твой взгляд — бесценно 🌸",
+    "Ты — моё главное вдохновение! 💎",
+    "Каждое твоё движение — это искусство ✨"
 ]
 
 @app.route('/')
 def home():
-    return "Сервер любви запущен и ждет запросов! ✨"
+    return "Сервер Любви запущен и готов к работе! ✨"
 
 @app.route('/get_compliment', methods=['GET'])
 def get_compliment():
@@ -27,15 +29,14 @@ def get_compliment():
 
 @app.route('/victory', methods=['POST'])
 def victory():
-    # Уведомление тебе в Telegram
-    msg = "💖 Твоя любимая только что прошла игру! Пора обнять её! 💐"
+    msg = "💖 ПОБЕДА! Она собрала все сердца своими руками! Время для сюрприза! 💐"
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     try:
         requests.post(url, json={"chat_id": CHAT_ID, "text": msg})
     except:
-        print("Telegram не настроен, но игра продолжается!")
+        print("Ошибка отправки в Telegram")
     return jsonify({"status": "delivered"})
 
 if __name__ == '__main__':
-    print("Сервер запущен на http://sosy.hyi")
-    app.run(port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
