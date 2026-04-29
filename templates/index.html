@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Nebula of Love ✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="loading">
+        <h1>Пробуждаем магию... ✨</h1>
+        <p>Разреши доступ к камере, чтобы управлять руками</p>
+    </div>
+    <div id="ui" style="display: none;">
+        <div id="score">Любовь: 0 / 20</div>
+        <div id="compliment-box">Дотянись до искр...</div>
+    </div>
+    <video id="input_video" style="display:none;" autoplay playsinline></video>
+    <canvas id="output_canvas"></canvas>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
