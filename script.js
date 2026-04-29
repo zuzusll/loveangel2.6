@@ -2,7 +2,7 @@
 
 // --- НАСТРОЙКА ССЫЛКИ ---
 // Когда выложишь на Render, замени этот адрес на свою ссылку
-const SERVER_URL = 'http://127.0.0.1:5000'; 
+const SERVER_URL = 'https://loveangel2-6.onrender.com'; 
 
 const videoElement = document.getElementById('input_video');
 const canvasElement = document.getElementById('output_canvas');
