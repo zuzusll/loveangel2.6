@@ -3,7 +3,7 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #050010;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     color: white;
 }
 
@@ -21,24 +21,23 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #050010;
+    background: radial-gradient(circle, #1a0033 0%, #050010 100%);
     z-index: 20;
-    text-align: center;
 }
 
-#loading h1 { color: #ff69b4; }
+#loading h1 { color: #ff69b4; text-shadow: 0 0 20px #ff69b4; }
 
 #ui {
     position: absolute;
-    top: 20px;
+    top: 30px;
     width: 100%;
     text-align: center;
-    pointer-events: none;
     z-index: 10;
+    pointer-events: none;
 }
 
 #score {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     text-shadow: 0 0 15px #ff69b4, 0 0 5px black;
 }
@@ -46,7 +45,8 @@ canvas {
 #compliment-box {
     margin-top: 15px;
     font-size: 22px;
-    color: #ffe6f2;
+    color: #ffb6c1;
     text-shadow: 0 0 10px #ff69b4, 0 0 5px black;
+    height: 30px;
     transition: opacity 0.5s;
 }
