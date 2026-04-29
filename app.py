@@ -8,8 +8,8 @@ app = Flask(__name__)
 CORS(app)
 
 # --- НАСТРОЙКИ TELEGRAM ---
-TELEGRAM_TOKEN = 'ТВОЙ_ТОКЕН_ОТ_BOTFATHER'
-CHAT_ID = 'ТВОЙ_ID'
+TELEGRAM_TOKEN = '8707170113:AAH88gma6zaDP1KJunOi0bQdxOAtZ9xi2qo'
+CHAT_ID = '8291998554'
 
 COMPLIMENTS = [
     "Твои руки творят магию ✨",
